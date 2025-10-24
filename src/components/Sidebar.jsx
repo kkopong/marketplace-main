@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { 
   Home, 
   Grid, 
@@ -13,6 +14,9 @@ import {
   User,
   Wrench
 } from 'lucide-react';
+=======
+import { Home, Grid, CreditCard, Users, Star, Package, Code, ChevronLeft, ChevronRight, LogOut } from 'lucide-react';
+>>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45
 
 const Sidebar = ({ onPageChange, isCollapsed, onToggleCollapse, onLogout }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -56,6 +60,7 @@ const Sidebar = ({ onPageChange, isCollapsed, onToggleCollapse, onLogout }) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className={`${isCollapsed ? 'w-16' : 'w-64'} bg-dark-800 h-screen fixed left-0 top-0 overflow-y-auto border-r border-dark-700 transition-all duration-300 flex flex-col`}>
       <div className="flex-1">
         {/* Logo/Header */}
@@ -152,8 +157,91 @@ const Sidebar = ({ onPageChange, isCollapsed, onToggleCollapse, onLogout }) => {
           )}
         </button>
       </div>
+=======
+    <div className={`${isCollapsed ? 'w-16' : 'w-64'} bg-dark-800 h-screen fixed left-0 top-0 overflow-y-auto border-r border-dark-700 transition-all duration-300`}>
+      {/* Logo/Header */}
+      <div className="p-4 flex items-center justify-between">
+        {!isCollapsed && (
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-primary-500 rounded-lg flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <h1 className="text-2xl font-bold text-white">Tools</h1>
+          </div>
+        )}
+        <button 
+          onClick={onToggleCollapse}
+          className="p-1 rounded-md hover:bg-dark-700 text-gray-400 hover:text-white transition-colors"
+          aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+        >
+          {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+        </button>
+      </div>
+
+      {/* Menu Items */}
+      <nav className="p-2">
+        <ul className="space-y-1">
+          {menuItems.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <li key={index}>
+                <div className={`${item.disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                  <button
+                    onClick={() => !item.disabled && handleMenuClick(index, item.page)}
+                    disabled={item.disabled}
+                    className={`w-full flex items-center ${isCollapsed ? 'justify-center p-3' : 'justify-between px-4 py-2.5'} rounded-lg transition-all duration-200 ${
+                      activeIndex === index && !item.disabled
+                        ? 'text-white bg-primary-600'
+                        : item.highlight
+                        ? 'text-primary-400 hover:bg-dark-700'
+                        : 'text-gray-400 hover:bg-dark-700 hover:text-gray-200'
+                    } ${item.disabled ? 'cursor-not-allowed' : ''}`}
+                    title={isCollapsed ? item.label : ''}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Icon className="w-5 h-5 flex-shrink-0" />
+                      {!isCollapsed && (
+                        <span className={`text-sm ${item.highlight ? 'font-semibold' : 'font-medium'}`}>
+                          {item.label}
+                        </span>
+                      )}
+                    </div>
+                    {!isCollapsed && item.badge && (
+                      <span className="text-xs bg-dark-700 text-gray-400 px-2 py-1 rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Logout Button */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-dark-700">
+          <button
+            onClick={handleLogout}
+            className="w-full flex items-center gap-3 px-4 py-2.5 text-red-400 hover:bg-dark-700 rounded-lg transition-colors"
+          >
+            <LogOut className="w-5 h-5" />
+            {!isCollapsed && <span>Logout</span>}
+          </button>
+        </div>
+      </nav>
+>>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Sidebar;
+=======
+Sidebar.defaultProps = {
+  onLogout: () => {}
+};
+
+export default Sidebar;
+>>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45

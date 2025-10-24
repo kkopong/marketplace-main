@@ -19,15 +19,24 @@ const FeaturedApps = () => {
   ];
 
   return (
+<<<<<<< HEAD
     <div className="mb-12 bg-dark-900 p-0">
       <div className="flex items-center justify-between mb-6 px-6 pt-6">
+=======
+    <div className="mb-12">
+      <div className="flex items-center justify-between mb-6">
+>>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45
         <h2 className="text-4xl font-bold text-white">Trending Now</h2>
         <button className="px-6 py-2 border-2 border-primary-500 text-primary-400 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-colors">
           featured
         </button>
       </div>
 
+<<<<<<< HEAD
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 pb-6">
+=======
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+>>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45
         {apps.map((app) => (
           <div
             key={app.id}

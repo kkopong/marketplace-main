@@ -1,23 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-<<<<<<< HEAD
-=======
 import { BrowserRouter } from 'react-router-dom';
->>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45
 import './index.css';
-import App from './App';
+import AuthWrapper from './AuthWrapper';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-<<<<<<< HEAD
-    <App />
-=======
     <BrowserRouter>
-      <App />
+      <AuthWrapper />
     </BrowserRouter>
->>>>>>> ff121ee6ccd10a48152449db3841b189dd675a45
   </React.StrictMode>
 );
 
