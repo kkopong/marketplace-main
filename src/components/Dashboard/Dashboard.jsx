@@ -27,12 +27,12 @@ const Dashboard = () => {
   const dataSource = [
     {
       key: '1',
-      customer: 'Jenny Wilson',
-      email: 'jenny@example.com',
-      product: 'Nike Sport V2',
-      price: '$214',
+      customer: 'NextTranscribe Company',
+      email: 'nextranscribe@aitool.com',
+      product: 'Next gen transcription',
+      price: '$10/month',
       status: 'completed',
-      date: '24.05.2020',
+      date: '24.05.2025',
     },
     // Add more rows as needed
   ];
